@@ -4,7 +4,7 @@ import zoneinfo
 aware_local_now = datetime.datetime.now().astimezone()
 local_tz = aware_local_now.tzinfo
 christmas = datetime.datetime(year = datetime.datetime.now().year, month = 12, day = 25)
-days_to_christmas = (christmas - datetime.datetime.now()).days
+days_to_christmas = (christmas - datetime.datetime.now()).days + 1
 
 
 print(f"It's {datetime.datetime.now().strftime("%Y-%m-%d %H:%M")} in {local_tz} time zone and I would just like to say, 'Hello World!!!'")
