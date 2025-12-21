@@ -1,8 +1,11 @@
 import datetime
 import zoneinfo
 
+# compute system timezone 
 aware_local_now = datetime.datetime.now().astimezone()
 local_tz = aware_local_now.tzinfo
+
+# compute days until Christmas
 christmas = datetime.datetime(year = datetime.datetime.now().year, month = 12, day = 25)
 days_to_christmas = (christmas - datetime.datetime.now()).days + 1
 
