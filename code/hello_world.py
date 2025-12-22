@@ -10,11 +10,19 @@ christmas = datetime.datetime(year = datetime.datetime.now().year, month = 12, d
 days_to_christmas = (christmas - datetime.datetime.now()).days + 1
 
 # compute days of life
-birthdate = utils.get_birthdate()
+birthdate = utils.get_birthdate(person = "me")
 days_of_life = (datetime.datetime.now() - birthdate).days + 1 
+
+# compute days of life for my parents
+birthdate_m = utils.get_birthdate(person = "mom")
+days_of_life_m = (datetime.datetime.now() - birthdate_m).days + 1
+
+birthdate_d = utils.get_birthdate(person = "dad")
+days_of_life_d = (datetime.datetime.now() - birthdate_d).days + 1
 
 print("")
 print(f"It's {datetime.datetime.now().strftime("%Y-%m-%d %H:%M")} in {local_tz} time zone and I would just like to say, 'Hello World!!!'")
 print(f"It's {days_to_christmas} days until Christmas!")
 print(f"I have lived a total of {days_of_life} days!!")
+print(f"Mom has lived {days_of_life_m} days and dad has lived {days_of_life_d} days!!")
 print("")
