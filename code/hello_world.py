@@ -41,6 +41,10 @@ event4 = "ww2"
 year4 = datetime.datetime(year = utils.get_event_year(event4),month = 1,day = 1)
 year4_gap = math.ceil((datetime.datetime.now() - year4).days/365.25)
 
+# compute time since the moon landing
+event5 = "moon_landing"
+year5 = datetime.datetime(year = utils.get_event_year(event5),month = 1, day = 1)
+year5_gap = math.ceil((datetime.datetime.now() - year5).days/365.25)
 
 date_paragraph = f"""
 It's {datetime.datetime.now().strftime("%Y-%m-%d %H:%M")} in {local_tz} time zone and I would just like to say, 'Hello World!!!
@@ -54,6 +58,7 @@ The {event2.replace("_"," ").title()} happened {year2_gap} years ago!!
 
 {event3.upper()} happened {year3_gap} years ago!!
 {event4.upper()} happened {year4_gap} years ago!!
+The {event5.replace("_"," ")} happened {year5_gap} years ago!!
 """
 
 print(date_paragraph)
