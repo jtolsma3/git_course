@@ -3,3 +3,4 @@
 
 # bs
 *.DS_Store
+.env
