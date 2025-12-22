@@ -1,4 +1,5 @@
 import datetime
+import math
 
 def get_birthdate(person = "me"):
     birthdates = {
@@ -39,3 +40,11 @@ def get_event_year(event_name):
         return events.get(event_name_clean)
     else:
         raise ValueError("this event is not included in the dictionary of stored events")
+
+# create a function to compute days since a particular event, like a birthday
+def get_days_since_event(event_date):
+    return (datetime.datetime.now() - event_date).days + 1
+
+# create a function to compute years since a particualr event, like a major event from world history
+def get_years_since_event(event_year):
+    return math.ceil((datetime.datetime.now() - event_year).days/365.25)
