@@ -42,9 +42,11 @@ def get_event_year(event_name):
         raise ValueError("this event is not included in the dictionary of stored events")
 
 # create a function to compute days since a particular event, like a birthday
-def get_days_since_event(event_date):
-    return (datetime.datetime.now() - event_date).days + 1
+def get_days_since_birth(person):
+    birthdate = get_birthdate(person)
+    return (datetime.datetime.now() - birthdate).days + 1
 
 # create a function to compute years since a particualr event, like a major event from world history
-def get_years_since_event(event_year):
-    return math.ceil((datetime.datetime.now() - event_year).days/365.25)
+def get_years_since_event(event):
+    event_date = datetime.datetime(year = get_event_year(event),month = 1,day = 1)
+    return math.ceil((datetime.datetime.now() - event_date).days/365.25)
