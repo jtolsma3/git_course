@@ -3,4 +3,5 @@
 
 # bs
 *.DS_Store
-.env
+*.env
+*.pyc
