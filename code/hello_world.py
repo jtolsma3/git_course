@@ -40,6 +40,10 @@ year5 = datetime.datetime(year = utils.get_event_year(event5),month = 1, day = 1
 year5_gap = math.ceil((datetime.datetime.now() - year5).days/365.25)
 print(year5.year)
 
+# compute time since the Battle of Hastings
+event6 = "battle_of_hastings"
+year6_gap = utils.get_years_since_event(event6)
+
 date_paragraph = f"""
 It's {datetime.datetime.now().strftime("%Y-%m-%d %H:%M")} in {local_tz} time zone and I would just like to say, 'Hello World!!!
 It's {days_to_christmas} days until Christmas!
@@ -53,6 +57,7 @@ The {event2.replace("_"," ").title()} happened {year2_gap} years ago!!
 {event3.upper()} happened {year3_gap} years ago!!
 {event4.upper()} happened {year4_gap} years ago!!
 The {event5.replace("_"," ")} happened {year5_gap} years ago!!
+The {event6.replace("_"," ").title()} happened {year6_gap} years ago!!
 """
 
 print(date_paragraph)
