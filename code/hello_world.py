@@ -56,4 +56,3 @@ The {event5.replace("_"," ")} happened {year5_gap} years ago!!
 """
 
 print(date_paragraph)
-utils.get_anniversary_events()
