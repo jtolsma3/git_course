@@ -12,42 +12,27 @@ christmas = datetime.datetime(year = datetime.datetime.now().year, month = 12, d
 days_to_christmas = (christmas - datetime.datetime.now()).days + 1
 
 # compute days of life
-birthdate = utils.get_birthdate(person = "me")
-days_of_life = utils.get_days_since_event(birthdate)
-print(birthdate.date())
+days_of_life = utils.get_days_since_birth(person = "me")
 
 # compute days of life for my parents
-birthdate_m = utils.get_birthdate(person = "mom")
-days_of_life_m = utils.get_days_since_event(birthdate_m)
-print(birthdate_m.date())
-
-birthdate_d = utils.get_birthdate(person = "dad")
-days_of_life_d = utils.get_days_since_event(birthdate_d)
-print(birthdate_d.date())
+days_of_life_m = utils.get_days_since_birth(person = "mom")
+days_of_life_d = utils.get_days_since_birth(person = "dad")
 
 # compute time the American Revolution
 event = "american_independence"
-year = datetime.datetime(year = utils.get_event_year(event),month = 1, day = 1)
-year_gap = utils.get_years_since_event(year)
-print(year.year)
+year_gap = utils.get_years_since_event(event)
 
 # compute time since the French Revolution
 event2 = "french_revolution"
-year2 = datetime.datetime(year = utils.get_event_year(event2),month = 1,day = 1)
-year2_gap = utils.get_years_since_event(year2)
-print(year2.year)
+year2_gap = utils.get_years_since_event(event2)
 
 # compute time since WWI
 event3 = "ww1"
-year3 = datetime.datetime(year = utils.get_event_year(event3),month = 1,day = 1)
-year3_gap = utils.get_years_since_event(year3)
-print(year3.year)
+year3_gap = utils.get_years_since_event(event3)
 
 # compute time since WWII
 event4 = "ww2"
-year4 = datetime.datetime(year = utils.get_event_year(event4),month = 1,day = 1)
-year4_gap = utils.get_years_since_event(year4)
-print(year4.year)
+year4_gap = utils.get_years_since_event(event4)
 
 # compute time since the moon landing
 event5 = "moon_landing"
