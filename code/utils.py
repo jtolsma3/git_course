@@ -33,6 +33,19 @@ birthdates = {
     "dad":datetime.datetime(year = 1950,month = 3, day = 5)
 }
 
+presidential_birth_years = {
+    "millard_fillmore": 1800,
+    "franklin_pierce": 1804,
+    "james_buchanan": 1791,
+    "chester_a_arthur": 1829,
+    "benjamin_harrison": 1833,
+    "rutherford_b_hayes": 1822,
+    "zachary_taylor": 1784,
+    "martin_van_buren": 1782,
+    "william_henry_harrison": 1773,
+    "john_tyler": 1790,
+}
+
 def get_birthdate(person = "me"):
 
     person_clean = person.lower().strip()
@@ -66,3 +79,8 @@ def get_anniversary_events():
         anniv_value = datetime.datetime.now().year - get_event_year(event_name)
         if anniv_value % 100 == 0:
             print(f"{event_name.replace("_"," ").title()} happened *exactly* {anniv_value} years ago!!")
+
+def get_presidential_age(president):
+    pres_age = datetime.datetime.now().year - presidential_birth_years[president]
+    print("")
+    print(f"Can you belive that, if {president.replace("_"," ").title()} were alive today, he would be {pres_age} years old?!")
