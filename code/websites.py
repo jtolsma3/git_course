@@ -13,3 +13,12 @@ website_list = [
 "https://www.apple.com/",
 "https://www.wirecutter.com/"
 ]
+
+bay_area_places = [
+"Stinson Beach",
+"Mt Tamalpais",
+"San Francisco - The Mission",
+"San Francisco - Dogpatch",
+"Windy Hill",
+"Edgewood Preserve"
+]
