@@ -1,4 +1,6 @@
 import datetime
+from random import randint
+from websites import website_list
 # import math
 
 event_list = {
@@ -66,3 +68,8 @@ def get_anniversary_events():
         anniv_value = datetime.datetime.now().year - get_event_year(event_name)
         if anniv_value % 100 == 0:
             print(f"{event_name.replace("_"," ").title()} happened *exactly* {anniv_value} years ago!!")
+
+def suggest_website():
+    i = randint(a = 0, b = len(website_list)-1)
+    print("")
+    print(f"I suggest you try visiting {website_list[i]} sometime.")

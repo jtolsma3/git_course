@@ -62,3 +62,4 @@ The {event6.replace("_"," ").title()} happened {year6_gap} years ago!!
 
 print(date_paragraph)
 utils.get_anniversary_events()
+utils.suggest_website()
