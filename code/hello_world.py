@@ -62,4 +62,7 @@ The {event6.replace("_"," ").title()} happened {year6_gap} years ago!!
 
 print(date_paragraph)
 utils.get_anniversary_events()
+utils.get_presidential_age(james_buchanan)
+utils.get_presidential_age(franklin_pierce)
+
 utils.suggest_website()
