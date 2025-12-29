@@ -8,7 +8,10 @@ aware_local_now = datetime.datetime.now().astimezone()
 local_tz = aware_local_now.tzinfo
 
 # compute days until Christmas
-christmas = datetime.datetime(year = datetime.datetime.now().year, month = 12, day = 25)
+if datetime.datetime.now().month == 12 and datetime.datetime.now().day > 25:
+  christmas = datetime.datetime(year = datetime.datetime.now().year+1, month = 12, day = 25)
+else:
+  christmas = datetime.datetime(year = datetime.datetime.now().year, month = 12, day = 25)
 days_to_christmas = (christmas - datetime.datetime.now()).days + 1
 
 # compute days of life
