@@ -4,6 +4,37 @@ from websites import website_list
 # import math
 import requests
 
+WMO_CODE_TO_TEXT = {
+    0: "Clear sky",
+    1: "Mainly clear",
+    2: "Partly cloudy",
+    3: "Overcast",
+    45: "Fog",
+    48: "Rime fog",
+    51: "Light drizzle",
+    53: "Moderate drizzle",
+    55: "Dense drizzle",
+    56: "Light freezing drizzle",
+    57: "Dense freezing drizzle",
+    61: "Slight rain",
+    63: "Moderate rain",
+    65: "Heavy rain",
+    66: "Light freezing rain",
+    67: "Heavy freezing rain",
+    71: "Slight snow",
+    73: "Moderate snow",
+    75: "Heavy snow",
+    77: "Snow grains",
+    80: "Slight rain showers",
+    81: "Moderate rain showers",
+    82: "Violent rain showers",
+    85: "Slight snow showers",
+    86: "Heavy snow showers",
+    95: "Thunderstorm",
+    96: "Thunderstorm with slight hail",
+    99: "Thunderstorm with heavy hail",
+}
+
 event_list = {
     "fall_of_rome": 476,
     "battle_of_hastings": 1066,
@@ -94,6 +125,7 @@ def suggest_website():
     i = randint(a = 0, b = len(website_list)-1)
     print("")
     print(f"I suggest you try visiting {website_list[i]} sometime.")
+<<<<<<< HEAD
 
 # get the user's location using ip address; this will be used to show the current weather
 
@@ -112,3 +144,5 @@ def get_weather(lat, long):
     return resp["current_weather"]
 
 
+=======
+>>>>>>> dcf74c9 (Add weather codes to utils for printing out human readable weather report)
