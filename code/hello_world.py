@@ -69,3 +69,6 @@ utils.get_presidential_age("rutherford_b_hayes")
 utils.get_presidential_age("martin_van_buren")
 
 utils.suggest_website()
+
+state,city,lat,long = utils.get_current_location_from_ip()
+print(state,city,lat,long)

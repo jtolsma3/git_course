@@ -2,6 +2,7 @@ import datetime
 from random import randint
 from websites import website_list
 # import math
+import requests
 
 event_list = {
     "fall_of_rome": 476,
@@ -72,7 +73,7 @@ def get_days_since_birth(person):
     birthdate = get_birthdate(person)
     return (datetime.datetime.now() - birthdate).days + 1
 
-# create a function to compute years since a particualr event, like a major event from world history
+# create a function to compute years since a particular event, like a major event from world history
 def get_years_since_event(event_name):
     return datetime.datetime.now().year - get_event_year(event_name)
 
@@ -82,13 +83,21 @@ def get_anniversary_events():
         if anniv_value % 100 == 0:
             print(f"{event_name.replace("_"," ").title()} happened *exactly* {anniv_value} years ago!!")
 
+# display hypothetical ages of presidents if they were alive today
 def get_presidential_age(president):
     pres_age = datetime.datetime.now().year - presidential_birth_years[president]
     print("")
     print(f"Can you belive that, if {president.replace("_"," ").title()} were alive today, he would be {pres_age} years old?!")
 
-
+# suggets a website to the user from a list of website in websites.py
 def suggest_website():
     i = randint(a = 0, b = len(website_list)-1)
     print("")
     print(f"I suggest you try visiting {website_list[i]} sometime.")
+
+# get the user's location using ip address; this will be used to show the current weather
+
+def get_current_location_from_ip():
+    resp = requests.get("http://ip-api.com/json").json()
+    return resp["region"],resp["city"],resp["lat"],resp["lon"]
+
