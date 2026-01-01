@@ -2,7 +2,6 @@ import datetime
 import utils
 import math
 
-
 # compute system timezone 
 aware_local_now = datetime.datetime.now().astimezone()
 local_tz = aware_local_now.tzinfo

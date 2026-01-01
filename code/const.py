@@ -1,0 +1,77 @@
+import datetime 
+
+wmo_codes = {
+    0: "Clear sky",
+    1: "Mainly clear",
+    2: "Partly cloudy",
+    3: "Overcast",
+    45: "Fog",
+    48: "Rime fog",
+    51: "Light drizzle",
+    53: "Moderate drizzle",
+    55: "Dense drizzle",
+    56: "Light freezing drizzle",
+    57: "Dense freezing drizzle",
+    61: "Slight rain",
+    63: "Moderate rain",
+    65: "Heavy rain",
+    66: "Light freezing rain",
+    67: "Heavy freezing rain",
+    71: "Slight snow",
+    73: "Moderate snow",
+    75: "Heavy snow",
+    77: "Snow grains",
+    80: "Slight rain showers",
+    81: "Moderate rain showers",
+    82: "Violent rain showers",
+    85: "Slight snow showers",
+    86: "Heavy snow showers",
+    95: "Thunderstorm",
+    96: "Thunderstorm with slight hail",
+    99: "Thunderstorm with heavy hail",
+}
+
+event_list = {
+    "fall_of_rome": 476,
+    "battle_of_hastings": 1066,
+    "magna_carta": 1215,
+    "black_death": 1347,
+    "columbus_voyage": 1492,
+    "luther_95_theses": 1517,
+    "american_independence": 1776,
+    "french_revolution": 1789,
+    "ww1": 1914,
+    "ww2": 1939,
+    "moon_landing": 1969,
+    "fall_of_berlin_wall": 1989,
+    "battle_of_waterloo": 1825,      # intentionally simplified
+    "railway_age_begins": 1825,
+    "founding_of_singapore": 1825,
+    "roaring_twenties_peak": 1925,
+    "american_independence": 1776,
+    "french_revolution": 1789,
+    "ww1": 1914,
+    "ww2": 1939,
+    "moon_landing": 1969,
+    "fall_of_berlin_wall": 1989,
+    "magna_carta": 1215,
+}
+
+birthdates = {
+    "me":datetime.datetime(year = 1986, month = 7, day = 19),
+    "mom":datetime.datetime(year = 1953,month = 5, day = 29),
+    "dad":datetime.datetime(year = 1950,month = 3, day = 5)
+}
+
+presidential_birth_years = {
+    "millard_fillmore": 1800,
+    "franklin_pierce": 1804,
+    "james_buchanan": 1791,
+    "chester_a_arthur": 1829,
+    "benjamin_harrison": 1833,
+    "rutherford_b_hayes": 1822,
+    "zachary_taylor": 1784,
+    "martin_van_buren": 1782,
+    "william_henry_harrison": 1773,
+    "john_tyler": 1790,
+}
