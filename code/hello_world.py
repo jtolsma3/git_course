@@ -1,7 +1,8 @@
 import datetime
 import utils
 import math
-
+import pgeocode
+import const
 
 # compute system timezone 
 aware_local_now = datetime.datetime.now().astimezone()
@@ -70,5 +71,11 @@ utils.get_presidential_age("martin_van_buren")
 
 utils.suggest_website()
 
-state,city,lat,long = utils.get_current_location_from_ip()
-utils.get_weather(state,city,lat,long)
+my_state,my_city,my_lat,my_long = utils.get_current_location_from_ip()
+my_temp_C,my_temp_F,my_conditions = utils.get_weather(my_lat,my_long)
+utils.print_weather(city = my_city,state = my_state,family = None,temp_C = my_temp_C,temp_F=my_temp_F,conditions=my_conditions)
+
+parents_zip = const.family_zips["mom_and_dad"]
+parents_lat, parents_long = utils.get_family_location(parents_zip)
+parents_temp_C, parents_temp_F, parents_conditions = utils.get_weather(parents_lat,parents_long)
+utils.print_weather(city = None,state = None,family = "mom_and_dad",temp_C= parents_temp_C,temp_F = parents_temp_F,conditions=parents_conditions)
