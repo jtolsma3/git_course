@@ -57,7 +57,7 @@ def get_current_location_from_ip():
     resp = requests.get("http://ip-api.com/json").json()
     return resp["region"],resp["city"],resp["lat"],resp["lon"]
 
-def get_weather(state,city,lat,long):
+def get_my_weather(state,city,lat,long):
     url = "https://api.open-meteo.com/v1/forecast"
     params = {
         "latitude": lat,
