@@ -101,3 +101,14 @@ def get_current_location_from_ip():
     resp = requests.get("http://ip-api.com/json").json()
     return resp["region"],resp["city"],resp["lat"],resp["lon"]
 
+def get_weather(lat, long):
+    url = "https://api.open-meteo.com/v1/forecast"
+    params = {
+        "latitude": lat,
+        "longitude": long,
+        "current_weather": True,
+    }
+    resp = requests.get(url, params=params).json()
+    return resp["current_weather"]
+
+
