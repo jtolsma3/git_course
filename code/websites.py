@@ -29,5 +29,7 @@ pittsburgh_places = [
 "Frick Park",
 "PNC Park",
 "Acrisure Stadium",
-"Mt. Washington"
+"Mt. Washington",
+"Blue Slide Park",
+"Dantahn",
 ]
