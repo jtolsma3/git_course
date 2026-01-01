@@ -133,7 +133,7 @@ def get_current_location_from_ip():
     resp = requests.get("http://ip-api.com/json").json()
     return resp["region"],resp["city"],resp["lat"],resp["lon"]
 
-def get_weather(lat, long):
+def get_weather(state,city,lat,long):
     url = "https://api.open-meteo.com/v1/forecast"
     params = {
         "latitude": lat,
@@ -141,7 +141,10 @@ def get_weather(lat, long):
         "current_weather": True,
     }
     resp = requests.get(url, params=params).json()
-    return resp["current_weather"]
+    weather_code = resp["current_weather"]["weathercode"]
+    temp_C = resp["current_weather"]["temperature"]
+    temp_F = (temp_C*9/5) + 32
+    print(f"\nThe current weather in {city}, {state} is {temp_F} F ({temp_C} C) and {WMO_CODE_TO_TEXT[weather_code].strip().lower()}!!\n")
 
 
 =======
