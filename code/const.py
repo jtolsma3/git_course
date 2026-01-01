@@ -55,6 +55,9 @@ event_list = {
     "moon_landing": 1969,
     "fall_of_berlin_wall": 1989,
     "magna_carta": 1215,
+    "jefferson_adams_simultaneous_passing":1826,
+    "route_66_opens":1926,
+    "winnie_the_pooh_published":1926,
 }
 
 birthdates = {
