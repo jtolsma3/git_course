@@ -125,7 +125,6 @@ def suggest_website():
     i = randint(a = 0, b = len(website_list)-1)
     print("")
     print(f"I suggest you try visiting {website_list[i]} sometime.")
-<<<<<<< HEAD
 
 # get the user's location using ip address; this will be used to show the current weather
 
@@ -147,5 +146,3 @@ def get_weather(state,city,lat,long):
     print(f"\nThe current weather in {city}, {state} is {temp_F} F ({temp_C} C) and {WMO_CODE_TO_TEXT[weather_code].strip().lower()}!!\n")
 
 
-=======
->>>>>>> dcf74c9 (Add weather codes to utils for printing out human readable weather report)

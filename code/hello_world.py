@@ -71,4 +71,4 @@ utils.get_presidential_age("martin_van_buren")
 utils.suggest_website()
 
 state,city,lat,long = utils.get_current_location_from_ip()
-weather = utils.get_weather(state,city,lat,long)
+utils.get_weather(state,city,lat,long)
