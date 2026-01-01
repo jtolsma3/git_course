@@ -4,6 +4,7 @@ from websites import website_list
 # import math
 import requests
 from const import birthdates,event_list,presidential_birth_years,wmo_codes
+from pgeocode import Nominatim
 
 def get_birthdate(person = "me"):
 
@@ -57,7 +58,11 @@ def get_current_location_from_ip():
     resp = requests.get("http://ip-api.com/json").json()
     return resp["region"],resp["city"],resp["lat"],resp["lon"]
 
-def get_my_weather(state,city,lat,long):
+def get_family_location(postal_code):
+    df = Nominatim("US").query_postal_code(postal_code)
+    return df["latitude"],df["longitude"]
+
+def get_weather(lat,long):
     url = "https://api.open-meteo.com/v1/forecast"
     params = {
         "latitude": lat,
@@ -68,6 +73,17 @@ def get_my_weather(state,city,lat,long):
     weather_code = resp["current_weather"]["weathercode"]
     temp_C = resp["current_weather"]["temperature"]
     temp_F = (temp_C*9/5) + 32
-    print(f"\nThe current weather in {city}, {state} is {temp_F} F ({temp_C} C) and {wmo_codes[weather_code].strip().lower()}!!\n")
+    conditions = wmo_codes[weather_code].strip().lower()
+    
+    return temp_C,temp_F,conditions
+
+def print_weather(state,city,family,temp_C,temp_F,conditions):
+    if state and city:
+        print(f"\nThe current weather at my location of {city}, {state} is {temp_F} F ({temp_C} C) and {conditions}.")
+    elif family:
+        family_formatted = family.strip().replace("_"," ").title()
+        print(f"\nThe current weather for {family_formatted} is {temp_F} F ({temp_C} C) and {conditions}.")
+    else:
+        raise ValueError("invalid values for either your location or family location.")
 
 

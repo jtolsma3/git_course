@@ -80,9 +80,9 @@ presidential_birth_years = {
 }
 
 family_zips = {
-    "parents":37135,
+    "mom_and_dad":37135,
     "nancy":19317,
     "derek":94107,
-    "mn_arnostis":55105,
-    "dave_regula":48912,
+    "the_minnesota_arnostis":55105,
+    "dave_and_regula":48912,
 }
