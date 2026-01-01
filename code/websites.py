@@ -22,3 +22,12 @@ bay_area_places = [
 "Windy Hill",
 "Edgewood Preserve"
 ]
+
+pittsburgh_places = [
+"Strip District",
+"Carnegie Natural History Musem",
+"Frick Park",
+"PNC Park",
+"Acrisure Stadium",
+"Mt. Washington"
+]
