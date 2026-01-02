@@ -40,9 +40,7 @@ year4_gap = utils.get_years_since_event(event4)
 
 # compute time since the moon landing
 event5 = "moon_landing"
-year5 = datetime.datetime(year = utils.get_event_year(event5),month = 1, day = 1)
-year5_gap = math.ceil((datetime.datetime.now() - year5).days/365.25)
-print(year5.year)
+year5_gap = utils.get_years_since_event(event5)
 
 # compute time since the Battle of Hastings
 event6 = "battle_of_hastings"
