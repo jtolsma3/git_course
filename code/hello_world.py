@@ -71,31 +71,6 @@ utils.get_presidential_age("martin_van_buren")
 
 utils.suggest_website()
 
-my_state,my_city,my_lat,my_long = utils.get_current_location_from_ip()
-my_temp_C,my_temp_F,my_conditions = utils.get_weather(my_lat,my_long)
-utils.print_weather(city = my_city,
-                    state = my_state,
-                    family = None,
-                    temp_C = my_temp_C,
-                    temp_F=my_temp_F,
-                    conditions=my_conditions)
-
-parents_zip = const.family_zips["mom_and_dad"]
-parents_lat, parents_long = utils.get_family_location(parents_zip)
-parents_temp_C, parents_temp_F, parents_conditions = utils.get_weather(parents_lat,parents_long)
-utils.print_weather(city = None,
-                    state = None,
-                    family = "mom_and_dad",
-                    temp_C= parents_temp_C,
-                    temp_F = parents_temp_F,
-                    conditions=parents_conditions)
-
-derek_zip = const.family_zips["derek"]
-derek_lat, derek_long = utils.get_family_location(derek_zip)
-derek_temp_C, derek_temp_F,derek_conditions = utils.get_weather(derek_lat,derek_long)
-utils.print_weather(city = None,
-                    state = None,
-                    family = "derek",
-                    temp_C = derek_temp_C,
-                    temp_F = derek_temp_F,
-                    conditions = derek_conditions)
+utils.print_weather("self")
+utils.print_weather("mom_and_dad")
+utils.print_weather("derek")

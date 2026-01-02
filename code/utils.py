@@ -3,7 +3,7 @@ from random import randint
 from websites import website_list
 # import math
 import requests
-from const import birthdates,event_list,presidential_birth_years,wmo_codes
+from const import birthdates,event_list,presidential_birth_years,wmo_codes,family_zips
 from pgeocode import Nominatim
 
 def get_birthdate(person = "me"):
@@ -77,11 +77,26 @@ def get_weather(lat,long):
     
     return temp_C,temp_F,conditions
 
-def print_weather(state,city,family,temp_C,temp_F,conditions):
+def print_weather(who = "self"):
+    if who == "self":
+        state,city,lat,long = get_current_location_from_ip()
+        family_formatted = None
+    else:
+        try:
+            family_zip = family_zips[who]
+            family_formatted = who.strip().replace("_"," ").title()
+        except:
+            ValueError("method call must pass 'self' or a valid family member")
+        
+        lat,long = get_family_location(family_zip)
+        state = None
+        city = None
+
+    temp_C,temp_F,conditions = get_weather(lat,long)
+
     if state and city:
         print(f"\nThe current weather at my location of {city}, {state} is {temp_F} F ({temp_C} C) and {conditions}.")
-    elif family:
-        family_formatted = family.strip().replace("_"," ").title()
+    elif family_formatted:
         print(f"\nThe current weather for {family_formatted} is {temp_F} F ({temp_C} C) and {conditions}.")
     else:
         raise ValueError("invalid values for either your location or family location.")
