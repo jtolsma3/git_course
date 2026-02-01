@@ -44,4 +44,4 @@ def run_joke_pipeline():
     models = list_ollama_models()
     model = choose_llm_model(models)
     joke = ollama_generate(model,prompt)
-    print(joke)
+    return model,joke
