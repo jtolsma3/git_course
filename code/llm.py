@@ -35,3 +35,13 @@ def ollama_generate(model,prompt):
     resp.raise_for_status()
     return resp.json()["response"]
 
+def run_joke_pipeline():
+    prompt = """
+    Please tell me a short, clever joke involving computer programming.
+    Please do not explain the joke afterwards and assume that your audience 
+    is savvy about computer programming languages, technologies, and topics.
+    """
+    models = list_ollama_models()
+    model = choose_llm_model(models)
+    joke = ollama_generate(model,prompt)
+    print(joke)
