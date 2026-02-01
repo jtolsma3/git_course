@@ -1,5 +1,6 @@
 import subprocess
 import random
+import requests
 
 def list_ollama_models():
     result = subprocess.run(
@@ -21,3 +22,24 @@ def choose_llm_model(models):
     if not candidates:
         raise RuntimeError("No Mistral or Llama models installed.")
     return random.choice(candidates)
+
+def ask_for_joke(model):
+    prompt = """
+    Please tell me a short, clever joke involving computer programming.
+    Please do not explain the joke afterwards and assume that your audience 
+    is savvy about computer programming languages, technologies, and topics.
+    """
+    result = subprocess.run(
+        ["ollama", "run", model, prompt],
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    return result.stdout.strip()
+
+
+def run_joke_pipeline():
+    models = list_ollama_models()
+    model = choose_llm_model(models)
+    joke = ask_for_joke(model)
+    print(joke)
