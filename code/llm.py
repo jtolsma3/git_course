@@ -1,5 +1,6 @@
 import subprocess
 import random
+import requests
 
 def list_ollama_models():
     result = subprocess.run(
@@ -21,3 +22,16 @@ def choose_llm_model(models):
     if not candidates:
         raise RuntimeError("No Mistral or Llama models installed.")
     return random.choice(candidates)
+
+def ollama_generate(model,prompt):
+    resp = requests.post("http://localhost:11434/api/generate",
+        json = {
+            "model":model,
+            "prompt":prompt,
+            "stream":False,
+        },
+        timeout = 30
+    )
+    resp.raise_for_status()
+    return resp.json()["response"]
+
