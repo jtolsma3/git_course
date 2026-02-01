@@ -86,3 +86,5 @@ family_zips = {
     "the_minnesota_arnostis":55105,
     "dave_and_regula":48912,
 }
+
+temperature = 0.8

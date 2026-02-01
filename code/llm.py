@@ -1,6 +1,7 @@
 import subprocess
 import random
 import requests
+import const
 
 def list_ollama_models():
     result = subprocess.run(
@@ -29,6 +30,7 @@ def ollama_generate(model,prompt):
             "model":model,
             "prompt":prompt,
             "stream":False,
+            "temperature":const.temperature
         },
         timeout = 30
     )
